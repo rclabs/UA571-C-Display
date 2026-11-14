@@ -1,0 +1,31 @@
+menu "Aliens sentry"
+
+    config ALIENS_AUDIO_ENABLED
+        bool "Synthesized critical warning on the CYD speaker output"
+        depends on IDF_TARGET_ESP32
+        default y
+        select DAC_DMA_AUTO_16BIT_ALIGN
+        help
+            Use the standard ESP32-2432S028R onboard amplifier fed by GPIO26
+            (DAC channel 1). GPIO25 remains available for touch. Disable for
+            boards with different wiring or when no audible warning is wanted.
+            Uses the ESP32 DAC continuous-mode/I2S0 DMA peripheral.
+
+    config ALIENS_AUDIO_VOLUME
+        int "Warning volume (%)"
+        depends on ALIENS_AUDIO_ENABLED
+        range 0 100
+        default 15
+        help
+            Start low: speaker and amplifier gain vary between board versions.
+            Zero is silent.
+
+    config ALIENS_START_IN_CRITICAL
+        bool "Start the demo at the critical threshold (sound/display test)"
+        default n
+        help
+            Start at 10 rounds (the configured code default) instead of 20.
+            Useful for testing the warning immediately at startup.
+            The normal demo resumes after the counter reaches zero.
+
+endmenu

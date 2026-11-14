@@ -1,0 +1,26 @@
+#ifndef LV_CONF_H
+#define LV_CONF_H
+
+#define LV_COLOR_DEPTH 16
+#define LV_USE_STDLIB_MALLOC LV_STDLIB_BUILTIN
+#define LV_USE_STDLIB_STRING LV_STDLIB_BUILTIN
+#define LV_USE_STDLIB_SPRINTF LV_STDLIB_BUILTIN
+
+#define LV_USE_OS LV_OS_NONE
+
+#define LV_USE_LOG 1
+#define LV_LOG_LEVEL LV_LOG_LEVEL_WARN
+
+#define LV_USE_LABEL 1
+#define LV_USE_BAR 1
+//#define LV_USE_LINE 1
+
+#define LV_FONT_MONTSERRAT_12 1
+#define LV_FONT_DEFAULT &lv_font_montserrat_14
+
+#define LV_USE_SDL 1
+#define LV_SDL_INCLUDE_PATH <SDL2/SDL.h>
+
+#define LV_USE_DRAW_SDL 0
+
+#endif

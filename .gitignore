@@ -1,0 +1,12 @@
+# Build products and fetched dependencies.
+build*/
+/external/lvgl/
+firmware/**/managed_components/
+firmware/**/sdkconfig
+firmware/**/sdkconfig.old
+firmware/**/.cache/
+
+# Local editor/Python metadata.
+__pycache__/
+*.py[cod]
+.DS_Store
